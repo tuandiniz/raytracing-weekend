@@ -1,3 +1,7 @@
+mod vec3;
+
+use vec3::Vec3;
+
 fn main() {
     let width = 512;
     let height =  512;
@@ -20,4 +24,17 @@ fn main() {
         }
     }
     eprintln!("Done.");
+    
+    let v = Vec3::new(1.0, 2.0, 2.0);
+    eprintln!("Length of vector {:?} is {}", v, v.length());
+    
+    let mut other_vector = 3.0 * v;
+    eprintln!("Length of other vector {:?} is {}", other_vector , other_vector.length());
+    
+    other_vector /= 2.0;
+    eprintln!("Length of other vector {:?} is {}", other_vector , other_vector.length());
+
+    let last = other_vector / 1.5;
+    eprintln!("Length of other vector {:?} is {}", last , last.length());
+    
 }
